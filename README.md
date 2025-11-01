@@ -16,29 +16,29 @@ O comando `super (enzima_B and name CA), (enzima_A and name CA)` revela um **RMS
 
 Após isolar o sítio ativo (`pocket_bound` na Cadeia A) e a região correspondente na enzima vazia (`pocket_apo` na Cadeia B), podemos visualizar o "ajuste induzido":
 
-![Insira aqui a Imagem 1: Comparação das superfícies pocket_apo (vermelha) e pocket_bound (cinza)](./img/geometric_fit.png)
+![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket_e.png]
 
-A imagem acima mostra como o bolso da enzima (cinza) se "fecha" e se molda ao redor do inibidor (amarelo) em comparação com a forma do bolso vazio (vermelho).
+A imagem acima mostra como o bolso da enzima (cinza) se "fecha" e se molda ao redor do inibidor em comparação com a forma do bolso vazio (vermelho).
 
 No entanto, a geometria sozinha não explica *por que* o inibidor foi atraído para este local.
 
 ## Análise 2: A Física da Atração (O Potencial Eletrostático - MEP)
 
-Aqui, investigamos a "equação" eletrostática. A hipótese é que o bolso vazio possui uma "assinatura de carga" de alta energia que é "satisfeita" ou "neutralizada" pela ligação do inibidor.
+Aqui, investigamos o mapa eletrostático da molécula. A hipótese é que o bolso vazio possui uma "assinatura de carga" de alta energia que é estabilizada ou neutralizada pela ligação do inibidor.
 
 ### O MEP "Antes": O Convite Eletrostático
 
 Primeiro, calculamos o MEP (usando o plugin APBS) para a superfície do bolso vazio (`pocket_apo`).
 
-![Insira aqui a Imagem 2: O MEP do bolso 'pocket_apo' vazio, mostrando as cores vermelhas e azuis](./img/mep_apo.png)
+![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/before_1.png]
 
-O resultado é um campo de alto contraste, com fortes regiões de potencial negativo (vermelho, rico em elétrons) e positivo (azul, pobre em elétrons). Este é o "mapa de atração" que o inibidor "vê" ao se aproximar.
+O resultado é um campo de alto contraste, com fortes regiões de potencial negativo (vermelho, rico em elétrons) e positivo (azul, pobre em elétrons). Este é o mapa de atração que o inibidor "vê" ao se aproximar.
 
 ### O MEP "Depois": A Neutralização da Carga
 
 Em seguida, calculamos o MEP para o complexo ativo (`complexo_ativo`, que é `pocket_bound + inibidor`).
 
-![Insira aqui a Imagem 3: O MEP do 'complexo_ativo' ocupado, mostrando uma superfície mais neutra](./img/mep_complex.png)
+![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/after_1.png]
 
 O resultado é uma superfície muito mais "estável" e eletricamente neutra. As fortes manchas vermelhas e azuis que existiam no bolso vazio desapareceram. Isso é a prova visual de que as cargas complementares do inibidor se encaixaram e **neutralizaram** o potencial de alta energia do bolso.
 
@@ -63,23 +63,23 @@ O script abaixo permite que qualquer usuário do PyMOL reproduza esta análise d
 *(Nota: Os comandos para rodar o APBS são manuais (via plugin) e estão descritos na narrativa acima.)*
 
 ```python
-# --- 1. CONFIGURAÇÃO INICIAL ---
+# --- 1. CONFIGURAÇÃO INICIAL (PARA SOBREPOR O DÍMERO) ---
 fetch 3WJ6
 remove solvent
-hide all, 3WJ6
+hide everything, 3WJ6
 create enzima_A, 3WJ6 and chain A
 create enzima_B, 3WJ6 and chain B
 disable 3WJ6
 show cartoon, enzima_A
 show cartoon, enzima_B
-color palecyan, enzima_A
-color slate, enzima_B
+color white, enzima_A
+color wheat, enzima_B
 super (enzima_B and name CA), (enzima_A and name CA)
 
 # --- 2. CONSTRUINDO O MECANISMO (Enzima A - Ocupada) ---
 select inibidor, enzima_A and organic
 # O PyMOL seleciona a Ser44 corretamente com o seletor `byres`
-select serina_chave, byres (resn SER and enzima_A within 4 of inibidor)
+select serina_chave, byres (resn SER and 3WJ6 within 4 of inibidor)
 select pocket_bound, (byres (enzima_A within 5 of inibidor)) and not inibidor and not serina_chave
 show sticks, inibidor or serina_chave
 zoom inibidor
