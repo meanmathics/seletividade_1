@@ -1,6 +1,14 @@
-# O Alvo Seletivo: Análise de Design de Fármacos no PyMOL (PDB: 3WJ6)
+# Análise Computacional de Seletividade em Antiobióticos no PyMOL (PDB: 3WJ6)
 
 Este repositório documenta uma análise de química computacional sobre o mecanismo de inibição de antibióticos, focando na seletividade. O objetivo é ir além da simples análise geométrica ("chave-fechadura") e investigar a física da atração eletrostática que guia a ligação do fármaco.
+
+Inicialmente a ideia é de identificar quantitativamente porque a Ampicilina é letal para um micro-organismo, mas completamente holística para as células humanas. Neste caso, a resposta é simples. As células humanas (Eucariotas) possuem uma membrana plasmática flexível. As bactérias (Procariotas), por outro lado, além da membrana plasmática, possuem uma membrana extra composta de peptidoglicano.
+Esta parede é crucial para proteger a bactéria da Lise Osmótica (acúmulo excessivo de água no interior da célula).
+
+A parede de peptidoglicano é construída por um conjunto de enzimas. A enzima-chave que faz a costura final (ligação cruzada) é a DD-Traspeptidase (ou PBP). Esta enzima utiliza um resíduo de Serina (SER) em seu sítio ativo.
+Esta Serina ataca o substrato natural da bactéria (um peptídeo D-Ala-D-Ala) para formar esta ligação cruzada.
+
+A penicilina tem uma estrutura que 'imita' o D-Ala-D-Ala, entrando no sítio ativo da enzima. O resíduo de Serina confunde a Penicilina com o substrato natural da bactéria atacando o anel beta-lactâmico da Penicilina (um anel quadrado de 4 membros, altamente tensionado) e o anel se abre formando uma ligação covalente estável com a Serina, acilando ('entupindo') a enzima. A bactéria não consegue mais construir sua parede e suas células implodem, neste caso, de modo completamente seletivo!
 
 **Modelo de Estudo:** Utilizamos a estrutura de cristal da DD-transpeptidase de *E. coli* (PDB ID: `3WJ6`). Este arquivo é um modelo de estudo ideal, pois contém um dímero que captura dois estados em um único arquivo:
 * **Cadeia A (O "Depois"):** A enzima em seu estado "ocupado", ligada covalentemente ao inibidor Ampicilina.
@@ -18,7 +26,7 @@ Após isolar o sítio ativo (`pocket_bound` na Cadeia A) e a região corresponde
 
 ![imagem1](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket_e.png)
 
-A imagem acima mostra como o bolso da enzima (cinza) se "fecha" e se molda ao redor do inibidor em comparação com a forma do bolso vazio (vermelho).
+A imagem acima mostra como o bolso da enzima (cinza) se "fecha" e se molda ao redor do inibidor em comparação com a forma do bolso vazio da enzima b (em vermelho).
 
 No entanto, a geometria sozinha não explica *por que* o inibidor foi atraído para este local.
 
@@ -46,13 +54,13 @@ O resultado é uma superfície muito mais "estável" e eletricamente neutra. As 
 
 ---
 
-## Conclusão: Uma Pergunta Complexa
+## Conclusão da Análise Computacional
 
 A análise prova que o bolso está eletricamente "pré-programado" para atrair e orientar o inibidor para a posição exata, permitindo o ataque covalente da Serina 44.
 
-Isso não nos leva a uma simples conclusão, mas a uma pergunta complexa:
+Isso não nos leva a uma simples conclusão, mas a uma nova pergunta:
 
-> **E se desenhássemos um novo antibiótico no computador que se ligasse ainda melhor, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-lo?**
+> **E se pudéssemos desenhar um novo antibiótico de modo quantitativo que se ligasse ainda melhor, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-lo?**
 
 ---
 
@@ -116,5 +124,3 @@ set transparency, 0.3, pocket_apo
 # --- 5. PRONTO PARA ANÁLISE MEP ---
 # O usuário agora pode rodar o APBS em 'pocket_apo' e 'complexo_ativo'
 select complexo_ativo, pocket_bound or inibidor
-
-# --- FIM DO SCRIPT ---
