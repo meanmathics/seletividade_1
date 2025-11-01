@@ -16,7 +16,7 @@ O comando `super (enzima_B and name CA), (enzima_A and name CA)` revela um **RMS
 
 Após isolar o sítio ativo (`pocket_bound` na Cadeia A) e a região correspondente na enzima vazia (`pocket_apo` na Cadeia B), podemos visualizar o "ajuste induzido":
 
-![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket_e.png]
+![imagem1](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket_e.png)
 
 A imagem acima mostra como o bolso da enzima (cinza) se "fecha" e se molda ao redor do inibidor em comparação com a forma do bolso vazio (vermelho).
 
@@ -30,7 +30,7 @@ Aqui, investigamos o mapa eletrostático da molécula. A hipótese é que o bols
 
 Primeiro, calculamos o MEP (usando o plugin APBS) para a superfície do bolso vazio (`pocket_apo`).
 
-![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/before_1.png]
+![imagem2](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/before_1.png)
 
 O resultado é um campo de alto contraste, com fortes regiões de potencial negativo (vermelho, rico em elétrons) e positivo (azul, pobre em elétrons). Este é o mapa de atração que o inibidor "vê" ao se aproximar.
 
@@ -38,7 +38,7 @@ O resultado é um campo de alto contraste, com fortes regiões de potencial nega
 
 Em seguida, calculamos o MEP para o complexo ativo (`complexo_ativo`, que é `pocket_bound + inibidor`).
 
-![https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/after_1.png]
+![imagem3](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/after_1.png)
 
 O resultado é uma superfície muito mais "estável" e eletricamente neutra. As fortes manchas vermelhas e azuis que existiam no bolso vazio desapareceram. Isso é a prova visual de que as cargas complementares do inibidor se encaixaram e **neutralizaram** o potencial de alta energia do bolso.
 
