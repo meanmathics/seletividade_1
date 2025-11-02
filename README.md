@@ -34,7 +34,7 @@ O comando `super (enzima_B and name CA), (enzima_A and name CA)` revela um **RMS
 
 Após isolar o sítio ativo (`pocket_bound` na Cadeia A) e a região correspondente na enzima vazia (`pocket_apo` na Cadeia B), podemos visualizar o "ajuste induzido":
 
-![Imagem da Comparação Geométrica](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket_e.png)
+![Imagem da Comparação Geométrica](https://raw.githubusercontent.com/meanmathics/seletividade_1/refs/heads/main/img/pocket-2.png)
 
 A imagem acima mostra como o bolso da enzima ocupada (cinza) se "fecha" e se molda ao redor do inibidor, em comparação com a forma do bolso vazio da enzima B (em vermelho).
 
