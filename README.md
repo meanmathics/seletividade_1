@@ -60,7 +60,7 @@ A análise prova que o bolso está eletricamente "pré-programado" para atrair e
 
 Isso não nos leva a uma simples conclusão, mas a uma nova pergunta interessante:
 
-> **E se pudéssemos desenhar computacionalmente moléculas, que se ligassem ainda mais seletivamente, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-lo?**
+> **E se pudéssemos desenhar computacionalmente moléculas, que se ligassem ainda mais seletivamente, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-las?**
 
 ---
 
