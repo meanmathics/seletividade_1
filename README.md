@@ -56,11 +56,11 @@ O resultado é uma superfície muito mais "estável" e eletricamente neutra. As 
 
 ## Conclusão da Análise Computacional
 
-A análise prova que o bolso está eletricamente "pré-programado" para atrair e orientar o inibidor para a posição exata, permitindo o ataque covalente da Serina 44.
+A análise prova que o bolso está eletricamente "pré-programado" para atrair e orientar o inibidor para a posição exata, permitindo o ataque covalente da Serina 44. Não é simplesmente geometria. 
 
-Isso não nos leva a uma simples conclusão, mas a uma nova pergunta:
+Isso não nos leva a uma simples conclusão, mas a uma nova pergunta interessante:
 
-> **E se pudéssemos desenhar um novo antibiótico de modo quantitativo que se ligasse ainda melhor, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-lo?**
+> **E se pudéssemos desenhar computacionalmente moléculas, que se ligassem ainda mais seletivamente, prevendo sua seletividade e afinidade eletrostática antes mesmo de sintetizá-lo?**
 
 ---
 
