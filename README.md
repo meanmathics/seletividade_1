@@ -130,3 +130,5 @@ set transparency, 0.3, pocket_apo
 # --- 5. PRONTO PARA ANÁLISE MEP ---
 select complexo_ativo, pocket_bound or inibidor
 # (O usuário deve agora usar o plugin APBS nas seleções 'pocket_apo' e 'complexo_ativo')
+
+# --- FIM DO SCRIPT ---
